@@ -79,7 +79,7 @@ export default function EarthquakeList({
       <div>
         <div className="flex justify-between items-center p-3 border-b border-[#1e293b] bg-[#1a1f2b]">
           <button
-            className="flex items-center gap-1 text-sm font-medium text-amber-300 hover:text-blue-500"
+            className="flex items-center gap-1 text-sm font-medium text-gray-300 hover:text-white"
             onClick={() => handleSort("time")}
           >
             Time
@@ -90,7 +90,7 @@ export default function EarthquakeList({
                 <ChevronDown size={16} />
               ))}
           </button>
-          <div className="text-sm font-medium text-amber-300">Magnitude</div>
+          <div className="text-sm font-medium text-gray-300">Magnitude</div>
         </div>
 
         <div className="overflow-y-auto max-h-[500px]">

@@ -84,48 +84,50 @@ export default function Home() {
   };
 
   return (
-    <main className="container mx-auto px-4 py-8">
-      <Header
-        lastUpdated={lastUpdated}
-        onRefresh={handleRefresh}
-        selectedDate={selectedDate}
-        onDateChange={handleDateChange}
-        timePeriod={timePeriod}
-      />
+    <div className="flex flex-col min-h-screen">
+      <main className="container mx-auto px-4 py-8 flex-grow">
+        <Header
+          lastUpdated={lastUpdated}
+          onRefresh={handleRefresh}
+          selectedDate={selectedDate}
+          onDateChange={handleDateChange}
+          timePeriod={timePeriod}
+        />
 
-      {loading && <Loading message="Fetching earthquake data..." />}
+        {loading && <Loading message="Fetching earthquake data..." />}
 
-      {error && (
-        <div className="bg-red-900 text-white p-4 rounded-md mb-6">
-          Error: {error}. Please try again later.
-        </div>
-      )}
+        {error && (
+          <div className="bg-red-900 text-white p-4 rounded-md mb-6">
+            Error: {error}. Please try again later.
+          </div>
+        )}
 
-      {!loading && !error && (
-        <>
-          <div className="mb-6">
-            <MapComponent
+        {!loading && !error && (
+          <>
+            <div className="mb-6">
+              <MapComponent
+                earthquakes={earthquakes}
+                onSelectEarthquake={handleEarthquakeSelect}
+                selectedEarthquake={selectedEarthquake}
+              />
+            </div>
+
+            <FilterBar
+              timePeriod={timePeriod}
+              onPeriodChange={handlePeriodChange}
+            />
+
+            <EarthquakeList
               earthquakes={earthquakes}
               onSelectEarthquake={handleEarthquakeSelect}
               selectedEarthquake={selectedEarthquake}
+              timePeriod={timePeriod}
             />
-          </div>
-
-          <FilterBar
-            timePeriod={timePeriod}
-            onPeriodChange={handlePeriodChange}
-          />
-
-          <EarthquakeList
-            earthquakes={earthquakes}
-            onSelectEarthquake={handleEarthquakeSelect}
-            selectedEarthquake={selectedEarthquake}
-            timePeriod={timePeriod}
-          />
-        </>
-      )}
+          </>
+        )}
+      </main>
 
       <Footer />
-    </main>
+    </div>
   );
 }

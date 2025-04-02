@@ -35,6 +35,9 @@ body {
     Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .font-anta {
@@ -206,7 +209,7 @@ button {
 }
 
 .earthquake-time {
-  /* color: yellow; */
+  /* color: var(--text-primary); */
   font-weight: 500;
 }
 
@@ -267,4 +270,26 @@ button {
 
 .filter-button-inactive:hover {
   background-color: #4a5568;
+}
+
+/* Footer styles */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.flex-grow {
+  flex-grow: 1;
+}
+
+footer {
+  margin-top: auto;
 }

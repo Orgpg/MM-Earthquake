@@ -2,10 +2,10 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="mt-12 py-6 border-t border-[#1e293b]">
+    <footer className="py-4 border-t border-[#1e293b] bg-[#0d1424] mt-auto">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="mb-4 md:mb-0">
+          <div className="mb-2 md:mb-0">
             <p className="text-gray-400 text-sm">
               Data provided by{" "}
               <a

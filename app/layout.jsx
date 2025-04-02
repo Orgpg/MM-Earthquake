@@ -22,10 +22,18 @@ export const metadata = {
     title: "Myanmar Earthquake Tracker",
     description:
       "Live earthquake data for Myanmar and surrounding areas from USGS",
-    url: "https://myanmar-earthquake-tracker.vercel.app",
+    url: "https://mmearthquake-tracker.vercel.app/",
     siteName: "Myanmar Earthquake Tracker",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/mm-img.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Myanmar Earthquake Tracker",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
@@ -33,6 +41,7 @@ export const metadata = {
     description:
       "Live earthquake data for Myanmar and surrounding areas from USGS",
     creator: "@waiphyoaung",
+    images: ["/mm-img.jpg"],
   },
   viewport: {
     width: "device-width",
@@ -40,11 +49,18 @@ export const metadata = {
     maximumScale: 1,
   },
   themeColor: "#0d1424",
+  icons: {
+    icon: [
+      { url: "/icons/favicon.ico" },
+      { url: "/icons/favicon.svg", type: "image/svg+xml" },
+    ],
+    apple: [{ url: "/icons/apple-touch-icon.png" }],
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="dark h-full">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
@@ -67,8 +83,8 @@ export default function RootLayout({ children }) {
         <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png" />
         <link rel="manifest" href="/icons/manifest.json" />
       </head>
-      <body className="bg-[#0d1424] md:px-32 text-gray-100 min-h-screen font-anta">
-        {children}
+      <body className="bg-[#0d1424] text-gray-100 min-h-screen font-anta flex flex-col h-full">
+        <div className="flex-grow md:px-32">{children}</div>
       </body>
     </html>
   );
