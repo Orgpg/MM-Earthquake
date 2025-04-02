@@ -14,7 +14,7 @@ export const metadata = {
   formatDetection: {
     telephone: false,
   },
-  metadataBase: new URL("https://mmearthquake-tracker.vercel.app/"),
+  metadataBase: new URL("https://mmeq.orgpg.lol/"),
   alternates: {
     canonical: "/",
   },
@@ -22,21 +22,21 @@ export const metadata = {
     title: "Myanmar Earthquake Tracker",
     description:
       "Live earthquake data for Myanmar and surrounding areas from USGS",
-    url: "https://mmearthquake-tracker.vercel.app/",
+    url: "https://mmeq.orgpg.lol/",
     siteName: "Myanmar Earthquake Tracker",
     locale: "en_US",
     type: "website",
     images: [
       {
         url: "/mm-img.jpg",
-        width: 1200,
-        height: 630,
+        width: 400, // ပြင်ဆင်ထားသော width
+        height: 400, // ပြင်ဆင်ထားသော height
         alt: "Myanmar Earthquake Tracker",
       },
     ],
   },
   twitter: {
-    card: "summary_large_image",
+    card: "summary", // summary_large_image မှ summary သို့ ပြောင်းလဲထားပါသည်
     title: "Myanmar Earthquake Tracker",
     description:
       "Live earthquake data for Myanmar and surrounding areas from USGS",
