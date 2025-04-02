@@ -50,7 +50,7 @@ export default function Header({
 
           <div className="flex justify-between items-center text-xs">
             <p className="text-primary">
-              Live earthquake data from USGS for Myanmar
+              မြန်မာနိုင်ငံအတွက် USGS မှ တိုက်ရိုက် ငလျင်ဒေတာ
             </p>
 
             <div className="text-primary">

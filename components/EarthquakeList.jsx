@@ -150,6 +150,7 @@ export default function EarthquakeList({
           {isToday(new Date()) &&
             timePeriod === "week" &&
             " (Today's earthquakes shown first)"}
+          <p className="text-xs text-amber-400">ပျင်းအား 4.0 နှင့်အထက်</p>
         </h2>
         <div className="text-sm text-primary">
           {sortedEarthquakes.length} earthquakes found

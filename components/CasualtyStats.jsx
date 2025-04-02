@@ -114,7 +114,7 @@ export default function CasualtyStats() {
               <UserX className="text-red-500" size={24} />
             </div>
             <div>
-              <p className="text-gray-400 text-sm">Deaths</p>
+              <p className="text-primary text-sm">Deaths - သေဆုံး</p>
               <p className="text-2xl font-bold text-red-500">
                 {casualtyData.deaths?.toLocaleString() || 0}
               </p>
@@ -128,7 +128,7 @@ export default function CasualtyStats() {
               <UserMinus className="text-orange-500" size={24} />
             </div>
             <div>
-              <p className="text-gray-400 text-sm">Injured</p>
+              <p className="text-primary text-sm">Injured - ဒဏ်ရာရ</p>
               <p className="text-2xl font-bold text-orange-500">
                 {casualtyData.injured?.toLocaleString() || 0}
               </p>
@@ -142,7 +142,7 @@ export default function CasualtyStats() {
               <Users className="text-blue-500" size={24} />
             </div>
             <div>
-              <p className="text-gray-400 text-sm">Missing</p>
+              <p className="text-primary text-sm">Missing - ပျောက်ဆုံး</p>
               <p className="text-2xl font-bold text-blue-500">
                 {casualtyData.missing?.toLocaleString() || 0}
               </p>
