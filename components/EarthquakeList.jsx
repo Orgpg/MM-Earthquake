@@ -145,13 +145,13 @@ export default function EarthquakeList({
   return (
     <div className="bg-[#0f172a] rounded-lg overflow-hidden shadow-xl border border-[#1e293b] h-full">
       <div className="p-4 bg-[#1e293b] flex justify-between items-center">
-        <h2 className="text-xl font-bold text-white">
+        <h2 className="text-xl font-bold text-primary">
           {getPeriodText()}
           {isToday(new Date()) &&
             timePeriod === "week" &&
             " (Today's earthquakes shown first)"}
         </h2>
-        <div className="text-sm text-gray-400">
+        <div className="text-sm text-primary">
           {sortedEarthquakes.length} earthquakes found
           {magnitudeStats?.count > 0 &&
             ` (M${magnitudeStats.min.toFixed(1)}-M${magnitudeStats.max.toFixed(

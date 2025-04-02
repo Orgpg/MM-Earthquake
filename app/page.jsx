@@ -127,8 +127,6 @@ export default function Home() {
     fetchEarthquakeData();
   };
 
-  // Update the handleEarthquakeSelect function to ensure immediate response
-
   // Improved handleEarthquakeSelect function for immediate map focus
   const handleEarthquakeSelect = (earthquake) => {
     // Set the selected earthquake immediately
@@ -161,15 +159,15 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <main className="container mx-auto px-4 py-8 flex-grow">
-        <Header
-          lastUpdated={lastUpdated}
-          onRefresh={handleRefresh}
-          selectedDate={selectedDate}
-          onDateChange={handleDateChange}
-          timePeriod={timePeriod}
-        />
+      <Header
+        lastUpdated={lastUpdated}
+        onRefresh={handleRefresh}
+        selectedDate={selectedDate}
+        onDateChange={handleDateChange}
+        timePeriod={timePeriod}
+      />
 
+      <main className="container mx-auto px-4 py-6 flex-grow">
         {loading && <Loading message="Fetching earthquake data..." />}
 
         {error && (

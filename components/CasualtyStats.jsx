@@ -163,7 +163,7 @@ export default function CasualtyStats() {
             <ExternalLink size={12} />
           </a>
         </p>
-        <p className="text-blue-500 mt-1">
+        <p className="text-primary mt-1">
           Last updated:{" "}
           {casualtyData.lastUpdated || new Date().toLocaleDateString()}
         </p>
