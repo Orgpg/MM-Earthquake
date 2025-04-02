@@ -1,0 +1,270 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
+  --background-dark: #0f172a;
+  --background-darker: #0d1424;
+  --background-header: #1e293b;
+  --text-primary: #a3b1cc;
+  --text-secondary: #5d6b82;
+  --text-coordinates: #4a7abe;
+  --border-color: #1e293b;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: var(--background-darker);
+  font-family: "Anta", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-anta {
+  font-family: "Anta", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+}
+
+.map-container {
+  width: 100%;
+  height: 500px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Add these styles for the earthquake markers */
+.earthquake-marker {
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.earthquake-marker:hover {
+  opacity: 1;
+  transform: scale(1.2);
+  z-index: 1000 !important;
+}
+
+.marker-magnitude {
+  display: none;
+  color: white;
+  font-weight: bold;
+  font-size: 10px;
+  text-shadow: 0 0 2px black;
+}
+
+.earthquake-marker:hover .marker-magnitude {
+  display: block;
+}
+
+.pulse {
+  animation: pulse 1.5s infinite;
+  z-index: 1000 !important;
+}
+
+.pulse .marker-magnitude {
+  display: block;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7);
+  }
+
+  70% {
+    transform: scale(1.1);
+    box-shadow: 0 0 0 15px rgba(255, 255, 255, 0);
+  }
+
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  }
+}
+
+/* Magnitude colors - including all magnitudes with more visible colors */
+.magnitude-0 {
+  background-color: #bdbdbd;
+}
+.magnitude-1 {
+  background-color: #4fc3f7;
+}
+.magnitude-2 {
+  background-color: #8bc34a;
+}
+.magnitude-3 {
+  background-color: #ffeb3b;
+}
+.magnitude-4 {
+  background-color: #ff9800;
+}
+.magnitude-5 {
+  background-color: #ff5252;
+}
+.magnitude-6 {
+  background-color: #ff4081;
+}
+.magnitude-7 {
+  background-color: #e040fb;
+}
+.magnitude-8 {
+  background-color: #9c27b0;
+}
+.magnitude-9 {
+  background-color: #7b1fa2;
+}
+
+/* Cross-browser compatibility fixes */
+.leaflet-container {
+  background: #1a1a2e !important;
+}
+
+.leaflet-popup-content-wrapper {
+  border-radius: 4px;
+}
+
+.leaflet-popup-content {
+  margin: 12px;
+}
+
+/* Ensure consistent button styling across browsers */
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+/* Fix for Firefox flexbox issues */
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+/* Ensure consistent scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-darker);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--background-header);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #4a5568;
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--background-header) var(--background-darker);
+}
+
+/* Ensure consistent text rendering */
+.earthquake-item {
+  background-color: var(--background-darker);
+  border-bottom: 1px solid var(--border-color);
+  padding: 16px;
+  transition: background-color 0.2s ease;
+}
+
+.earthquake-item:hover {
+  background-color: var(--background-dark);
+}
+
+.earthquake-item-selected {
+  background-color: var(--background-dark);
+}
+
+.earthquake-time {
+  /* color: yellow; */
+  font-weight: 500;
+}
+
+.earthquake-time-ago {
+  /* color: var(--text-secondary); */
+  margin-left: 8px;
+}
+
+.earthquake-location {
+  /* color: var(--text-primary); */
+  margin-top: 8px;
+  font-weight: 500;
+}
+
+.earthquake-coordinates {
+  /* color: var(--text-coordinates); */
+  margin-top: 8px;
+  font-size: 0.9rem;
+}
+
+.magnitude-display {
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+
+.details-link {
+  color: #4fc3f7;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.875rem;
+  margin-top: 8px;
+  justify-content: flex-end;
+}
+
+.details-link:hover {
+  color: #81d4fa;
+}
+
+/* Filter buttons */
+.filter-button {
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 0.875rem;
+  transition: all 0.2s ease;
+}
+
+.filter-button-active {
+  background-color: #e53e3e;
+  color: white;
+}
+
+.filter-button-inactive {
+  background-color: #2d3748;
+  color: #cbd5e0;
+}
+
+.filter-button-inactive:hover {
+  background-color: #4a5568;
+}
