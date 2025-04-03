@@ -14,7 +14,7 @@ export const metadata = {
   formatDetection: {
     telephone: false,
   },
-  metadataBase: new URL("https://mmeq.orgpg.lol/"),
+  metadataBase: new URL("https://mmeq.waiphyoaung.dev/"),
   alternates: {
     canonical: "/",
   },
@@ -22,7 +22,7 @@ export const metadata = {
     title: "Myanmar Earthquake Tracker",
     description:
       "Live earthquake data for Myanmar and surrounding areas from USGS",
-    url: "https://mmeq.orgpg.lol/",
+    url: "https://mmeq.waiphyoaung.dev/",
     siteName: "Myanmar Earthquake Tracker",
     locale: "en_US",
     type: "website",
